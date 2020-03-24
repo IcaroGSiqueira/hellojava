@@ -1,10 +1,5 @@
 package app;
 
-/*import javax.swing.*;
-//import javax.swing.JFrame;
-//import javax.swing.JOptionPane;
-*/
-
 public class Aula1 {
     public static void main(final String[] args) throws Exception {
 
