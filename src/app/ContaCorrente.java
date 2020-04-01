@@ -4,12 +4,12 @@ public class ContaCorrente {
     //private double saldo = 50;
     private double saldo;
 
-    public ContaCorrente(){
-        this.saldo = 50.0;
+    public ContaCorrente(int i){
+        this.saldo = i;
     }
     
     public double getSaldo(){
-        return saldo;
+        return this.saldo;
     }
 
     /*
