@@ -3,7 +3,7 @@ package app;
 //import javax.swing.JOptionPane;
 import java.util.ArrayList;
 
-public class Aula1 {
+public class Codigo1{
     public static void main(final String[] args) throws Exception {
 
         ArrayList<ContaCorrente> contas = new ArrayList<ContaCorrente>();
