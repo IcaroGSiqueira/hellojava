@@ -1,6 +1,6 @@
 package app;
 
-public class App {
+public class Codigo2 {
     public static void main(String[] args) throws Exception {
         
         
