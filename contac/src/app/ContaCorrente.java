@@ -4,8 +4,12 @@ public class ContaCorrente {
     //private double saldo = 50;
     private double saldo;
 
-    public ContaCorrente(int i){
-        this.saldo = i;
+    public ContaCorrente(){
+        this.saldo = 0;
+    }
+
+    public ContaCorrente(double valor){
+        this.saldo = valor;
     }
     
     public double getSaldo(){
@@ -18,14 +22,14 @@ public class ContaCorrente {
     }
     */
 
-    public double depositar(final double valor) {
+    public double depositar(double valor) {
         if (valor > 0) {
             saldo = saldo + valor;
         }
         return saldo;
     }
 
-    public double sacar(final double valor) {
+    public double sacar(double valor) {
         if(valor <= saldo){
             saldo = saldo - valor;
         }
