@@ -6,7 +6,7 @@ public class Veiculo{
     private double valor;
     private double consumo;
     private boolean ligado;
-    
+
     public void ligar(){
         this.ligado = true;
     }
