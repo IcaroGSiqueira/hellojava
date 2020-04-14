@@ -4,10 +4,21 @@ import classes.*;
 public class Codigo2 {
     public static void main(String[] args) throws Exception {
         
-        Carro c = new Carro();
-        Moto m = new Moto();
+        Carro camaro = new Carro("Chevrolet");
+        Carro fusca = new Carro("Volkswagen");
+        Carro uno = new Carro("Fiat");
+        Moto cg = new Moto("Honda");
 
-        c.marchaRe();
+        cg.ligar();
+        fusca.ligar();
+        uno.ligar();
+        camaro.ligar();
+
+        camaro.arCondicionado();
+        fusca.bancoCouro();
+        uno.tamanhoPortaMalas(30);
+
+        camaro.marchaRe();
         
     }
 }
