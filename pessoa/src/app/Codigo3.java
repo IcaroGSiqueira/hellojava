@@ -42,7 +42,7 @@ public class Codigo3 {
         double p2 = Double.parseDouble(JOptionPane.showInputDialog("Digite a nota 2: "));
         estudante0.setMedia(estudante0.calcMedia(p1, p2));
         System.out.println(estudante0.toString());
-*/
+
         ArrayList<Estudante> matricula = new ArrayList<>();
         for(int i=0;i<1;i++){//////////////////////////////////////////////////////////////////////
             String nome4 = JOptionPane.showInputDialog("Digite o nome: ");
@@ -58,22 +58,25 @@ public class Codigo3 {
             if(st.getMedia() > media){
                 System.out.println(st.toString());
             }
-        }
+        }*/
 
         Boolean teste = true;
         ArrayList<Estudante> matricula2 = new ArrayList<>();
         while(teste){
             String nome5 = JOptionPane.showInputDialog("Digite o nome: ");
-            String cpf5 = JOptionPane.showInputDialog("Digite o cpf: ");
-            Estudante estudante2 = new Estudante(nome5, cpf5);  
-            double p5 = Double.parseDouble(JOptionPane.showInputDialog("Digite a nota 1: "));
-            double p6 = Double.parseDouble(JOptionPane.showInputDialog("Digite a nota 2: "));
-            estudante2.setMedia(estudante2.calcMedia(p5, p6));
-            matricula2.add(estudante2);
-            if(nome5 == "Fim" || nome5 == "FIM" || nome5 == "fim"){
+            if(nome5.equalsIgnoreCase("fim")){
                 teste = false;
             }
+            else{
+                String cpf5 = JOptionPane.showInputDialog("Digite o cpf: ");
+                Estudante estudante2 = new Estudante(nome5, cpf5);  
+                double p5 = Double.parseDouble(JOptionPane.showInputDialog("Digite a nota 1: "));
+                double p6 = Double.parseDouble(JOptionPane.showInputDialog("Digite a nota 2: "));
+                estudante2.setMedia(estudante2.calcMedia(p5, p6));
+                matricula2.add(estudante2);
+            }
         }
+        int media = 7;
         ArrayList<Estudante> aprovados = new ArrayList<>();
         for(Estudante estudAp  : matricula2){
             if(estudAp.getMedia() > media){
