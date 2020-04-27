@@ -8,8 +8,17 @@ public class PessoaFisica extends Pessoa{
         this.cpf = cpf;
     }
 
-    public String toString(){
-        return "Nome: " + super.nome + "\n" + "CPF: " + this.cpf;
+    public String getCpf(){
+        return this.cpf;
     }
 
+    public void setCpf(String cpf){
+        this.cpf = cpf;
+    }
+
+    @Override
+    public String toString(){
+        //return "Nome: " + super.nome + "\n" + "CPF: " + this.cpf;
+        return "CPF: " + this.cpf;
+    }
 }
