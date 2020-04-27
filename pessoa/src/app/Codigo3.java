@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 
 public class Codigo3 {
     public static void main(String[] args) throws Exception{ 
-/*
+
         String nome0 = JOptionPane.showInputDialog("Digite o nome: ");
         Pessoa h0 = new Pessoa(nome0);
         //System.out.println(h0.getNome());
@@ -32,7 +32,7 @@ public class Codigo3 {
                 System.out.println(h.toString());
             }
         }
-        
+
 
 
         String nome3 = JOptionPane.showInputDialog("Digite o nome: ");
@@ -58,7 +58,7 @@ public class Codigo3 {
             if(st.getMedia() > media){
                 System.out.println(st.toString());
             }
-        }*/
+        }
 
         Boolean teste = true;
         ArrayList<Estudante> matricula2 = new ArrayList<>();
@@ -76,7 +76,7 @@ public class Codigo3 {
                 matricula2.add(estudante2);
             }
         }
-        int media = 7;
+
         ArrayList<Estudante> aprovados = new ArrayList<>();
         for(Estudante estudAp  : matricula2){
             if(estudAp.getMedia() > media){
