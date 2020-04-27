@@ -8,7 +8,7 @@ public class Estudante extends PessoaFisica{
         this.media = -1;
     }
 
-    public Double getMedia(){
+    public double getMedia(){
         return this.media;
     }
 
