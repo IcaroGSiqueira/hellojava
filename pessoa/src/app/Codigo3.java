@@ -44,7 +44,7 @@ public class Codigo3 {
         System.out.println(estudante0.toString());
 
         ArrayList<Estudante> matricula = new ArrayList<>();
-        for(int i=0;i<1;i++){//////////////////////////////////////////////////////////////////////
+        for(int i=0;i<5;i++){
             String nome4 = JOptionPane.showInputDialog("Digite o nome: ");
             String cpf4 = JOptionPane.showInputDialog("Digite o cpf: ");
             Estudante estudante1 = new Estudante(nome4, cpf4);
@@ -53,7 +53,7 @@ public class Codigo3 {
             estudante1.setMedia(estudante1.calcMedia(p3, p4));
             matricula.add(estudante1);
         }
-        double media = Double.parseDouble(JOptionPane.showInputDialog("Digite uma média para pesquisa: "));
+        double media = Double.parseDouble(JOptionPane.showInputDialog("Digite a média de aprovação: "));
         for(Estudante st : matricula){
             if(st.getMedia() > media){
                 System.out.println(st.toString());

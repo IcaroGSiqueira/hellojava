@@ -22,7 +22,7 @@ public class Estudante extends PessoaFisica{
 
     @Override
     public String toString(){
-        //return "Nome: " + super.nome + "\n" + "CPF: " + super.cpf + "\n" + "Média: " + this.media;
-        return "Média: " + this.media;
+        return "Nome: " + super.getNome() + "\n" + "CPF: " + super.getCpf() + "\n" + "Média: " + this.media;
+        //return "Média: " + this.media;
     }
 }
