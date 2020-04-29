@@ -39,6 +39,6 @@ public class Banco{
     
     @Override
     public String toString(){
-        return "Banco: " + this.banco + "\n" + contas.toString();
+        return "Banco: " + "\n" + this.banco + "\n" + contas.toString() + "\n\n";
     }
 }
