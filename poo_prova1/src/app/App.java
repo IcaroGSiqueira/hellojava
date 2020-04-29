@@ -35,20 +35,20 @@ public class App {
 
                 case 2: 
 
-                    int del_num = Integer.parseInt(JOptionPane.showInputDialog("Digite o index da conta a ser removida: "));
+                    int del_num = Integer.parseInt(JOptionPane.showInputDialog("Digite o índice da conta a ser removida: "));
                     banco.delConta(del_num);
                     break;
 
                 case 3: 
 
-                    int dep_num = Integer.parseInt(JOptionPane.showInputDialog("Digite o index da conta a depositar: "));
+                    int dep_num = Integer.parseInt(JOptionPane.showInputDialog("Digite o índice da conta a depositar: "));
                     double valor_dep = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor a depositar: "));
                     banco.depositar(dep_num, valor_dep);
                     break;
 
                 case 4: 
 
-                    int sac_num = Integer.parseInt(JOptionPane.showInputDialog("Digite o index da conta a sacar: "));
+                    int sac_num = Integer.parseInt(JOptionPane.showInputDialog("Digite o índice da conta a sacar: "));
                     double valor_sac = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor a sacar: "));
                     banco.sacar(sac_num, valor_sac);
                     break;

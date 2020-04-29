@@ -21,12 +21,12 @@ public class Banco{
         contas.remove(conta);
     }
 
-    public void depositar(int cc, double valor) {
-       contas.get(cc).depositar(valor);
+    public void depositar(int cci, double valor) {
+       contas.get(cci).depositar(valor);
     }
 
-    public void sacar(int cc, double valor) {
-        contas.get(cc).sacar(valor);
+    public void sacar(int cci, double valor) {
+        contas.get(cci).sacar(valor);
     }
 
     public int totConta() {
@@ -39,6 +39,6 @@ public class Banco{
     
     @Override
     public String toString(){
-        return "Banco: " + "\n" + this.banco + "\n" + contas.toString() + "\n\n";
+        return "Banco: " + this.banco + "\n" + contas.toString() + "\n";
     }
 }

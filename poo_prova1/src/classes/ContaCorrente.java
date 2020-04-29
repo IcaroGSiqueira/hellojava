@@ -39,6 +39,6 @@ public class ContaCorrente{
     
     @Override
     public String toString(){
-        return "Nome: " + cliente.getNome() + "\n" + "CPF: " + cliente.getCpf() + "\n" + "E-mail: " + cliente.getEmail() + "\n" + "Agência: " + this.n_agencia + "\n" + "Conta: " + this.n_conta + "\n" + "Saldo: " + this.saldo;
+        return "\n" + "Nome: " + cliente.getNome() + "\n" + "CPF: " + cliente.getCpf() + "\n" + "E-mail: " + cliente.getEmail() + "\n" + "Agência: " + this.n_agencia + "\n" + "Conta: " + this.n_conta + "\n" + "Saldo: " + this.saldo + "\n";
     }
 }
