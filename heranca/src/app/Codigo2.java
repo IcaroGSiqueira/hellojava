@@ -9,6 +9,8 @@ public class Codigo2 {
         Carro uno = new Carro("Fiat");
         Moto cg = new Moto("Honda");
 
+        Pessoa icaro = new Pessoa("Icaro");
+
         cg.ligar();
         fusca.ligar();
         uno.ligar();
@@ -19,6 +21,8 @@ public class Codigo2 {
         uno.tamanhoPortaMalas(30);
 
         camaro.marchaRe();
+
+        icaro.locomover(fusca);
         
     }
 }
