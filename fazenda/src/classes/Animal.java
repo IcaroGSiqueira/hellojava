@@ -1,7 +1,6 @@
-//import classes;
 package classes;
 
-public class Animal {
+public abstract class Animal {
     int idade;
     int peso;
     int numPatas;
@@ -14,5 +13,5 @@ public class Animal {
         this.possuiAsas = possuiAsas;
     }
 
-    public void som(){}
+    public abstract som();
 }
