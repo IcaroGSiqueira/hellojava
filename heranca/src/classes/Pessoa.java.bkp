@@ -1,7 +1,10 @@
 package classes;
 
 public class Pessoa{
-    public Pessoa(String nome) {
+    private String nome;
+
+    public Pessoa(String nome){
+        this.nome = nome;
     }
 
     public void locomover(Veiculo veiculo){ 
