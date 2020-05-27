@@ -1,4 +1,3 @@
-//import classes;
 package classes;
 
 public class Pato extends Animal{
