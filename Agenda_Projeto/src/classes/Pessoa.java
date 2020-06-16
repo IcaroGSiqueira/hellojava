@@ -1,6 +1,6 @@
 package classes;
 
-public abstract class Pessoa implements Contato{
+public abstract class Pessoa extends Contatos{
 
     protected String nome;
     protected Contatos contatos;
@@ -21,7 +21,7 @@ public abstract class Pessoa implements Contato{
     abstract void addContato(Pessoa contato);
 
     abstract void rmvContato(Pessoa contato);
-    
+
     @Override
     public String toString(){
         return "\n" + "Tipo:" + this.type + "\n" + "Nome: " + this.nome + "\n" + "CPF/CNPJ: " + this.code + "\n" + "Contato: " + contatos.getContact() + "\n";

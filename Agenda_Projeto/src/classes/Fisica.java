@@ -1,6 +1,6 @@
 package classes;
 
-public class Fisica extends Contatos{
+public class Fisica extends Pessoa{
     public Fisica(String nome, Contatos contato, String cpf, int tipo){
         super.nome = nome;
         super.contatos = contato;
@@ -11,4 +11,18 @@ public class Fisica extends Contatos{
     public String getCPF(){
         return super.code;
     }
+
+    @Override
+    void addContato(Pessoa contato) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    void rmvContato(Pessoa contato) {
+        // TODO Auto-generated method stub
+
+    }
+
+
 }

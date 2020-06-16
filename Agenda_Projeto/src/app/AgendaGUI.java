@@ -25,14 +25,14 @@ public class AgendaGUI<E> extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        tipoForm = new javax.swing.JComboBox<E>();
+        tipoForm = new javax.swing.JComboBox();
         emailForm = new javax.swing.JTextField();
         codeForm = new javax.swing.JTextField();
         foneForm = new javax.swing.JTextField();
         nomeForm = new javax.swing.JTextField();
         addContato = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        listContato = new javax.swing.JList<E>();
+        listContato = new javax.swing.JList();
         rmvContato = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -51,28 +51,25 @@ public class AgendaGUI<E> extends javax.swing.JFrame {
         setResizable(false);
 
         tipoForm.setMaximumRowCount(2);
-        tipoForm.setModel(new javax.swing.DefaultComboBoxModel<E>((E[]) new String[] { "Física", "Jurídica" }));
+        tipoForm.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Física", "Jurídica" }));
         tipoForm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tipoFormActionPerformed(evt);
             }
         });
 
-        emailForm.setText("");
         emailForm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailFormActionPerformed(evt);
             }
         });
 
-        codeForm.setText("");
         codeForm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 codeFormActionPerformed(evt);
             }
         });
 
-        foneForm.setText("");
         foneForm.setToolTipText("");
         foneForm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,7 +78,6 @@ public class AgendaGUI<E> extends javax.swing.JFrame {
         });
 
         nomeForm.setBackground(new java.awt.Color(174, 178, 199));
-        nomeForm.setText("");
         nomeForm.setToolTipText("");
         nomeForm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,16 +92,10 @@ public class AgendaGUI<E> extends javax.swing.JFrame {
             }
         });
 
-        listContato.setModel(new javax.swing.AbstractListModel<E>() {
-            /**
-             *
-             */
-            private static final long serialVersionUID = 1L;
+        listContato.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
-            public E getElementAt(int i) {
-                return (E) strings[i];
-            }
+            public Object getElementAt(int i) { return strings[i]; }
         });
         jScrollPane1.setViewportView(listContato);
 
@@ -156,8 +146,8 @@ public class AgendaGUI<E> extends javax.swing.JFrame {
                                 .addComponent(addContato, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(rmvContato, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(tipoForm, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tipoForm, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(10, 10, 10)))
                 .addContainerGap())
         );
@@ -165,7 +155,7 @@ public class AgendaGUI<E> extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(tipoForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tipoForm)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
@@ -289,6 +279,7 @@ public class AgendaGUI<E> extends javax.swing.JFrame {
                 break;
         }
         
+        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("GTK+".equals(info.getName())) {
@@ -318,10 +309,10 @@ public class AgendaGUI<E> extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JList<E> listContato;
+    private javax.swing.JList listContato;
     private javax.swing.JTextField nomeForm;
     private javax.swing.JButton rmvContato;
-    private javax.swing.JComboBox<E> tipoForm;
+    private javax.swing.JComboBox tipoForm;
     // End of variables declaration//GEN-END:variables
 
     private void printf(String oi) {
