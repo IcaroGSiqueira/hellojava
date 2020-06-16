@@ -31,7 +31,7 @@ public class Contatos implements Contato{
         return this.email;
     }
 
-    public String getContact() {
-        return this.email + ";" + this.fone;
+    public String toString() {
+        return "Email: " + this.email + "\n" + "Fone: " + this.fone + "\n";
     }
 }

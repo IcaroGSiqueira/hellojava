@@ -271,7 +271,7 @@ public class AgendaGUI<E> extends javax.swing.JFrame {
                 contatosf.setContact(fone,email);
                 Pessoa pessoaf = new Fisica(nome, contatosf, cpf, tipo);
                 agenda.addContato(pessoaf);
-                agenda.toString();
+                System.out.println(agenda.toString());
                 break;
 
             case 1: 
@@ -279,7 +279,7 @@ public class AgendaGUI<E> extends javax.swing.JFrame {
                 contatosj.setContact(fone);
                 Pessoa pessoaj = new Juridica(nome, contatosj, cnpj, tipo);
                 agenda.addContato(pessoaj);
-                agenda.toString();
+                System.out.println(agenda.toString());
                 break;
         }
         
@@ -298,8 +298,8 @@ public class AgendaGUI<E> extends javax.swing.JFrame {
         // Create and display the form
         java.awt.EventQueue.invokeLater(() -> {
             new AgendaGUI().setVisible(true);
-        });
-        */
+        });*/
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
