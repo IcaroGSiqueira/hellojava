@@ -4,7 +4,7 @@ package classes;
  *
  * @author icaro
  */
-public abstract class Contatos implements Contato{
+public class Contatos implements Contato{
 
     protected int fone;
 

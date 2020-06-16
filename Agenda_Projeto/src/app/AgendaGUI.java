@@ -196,6 +196,8 @@ public class AgendaGUI<E> extends javax.swing.JFrame {
         String nome = this.nomeForm.getText();
         
         this.foneForm.setActionCommand(email);
+
+        Agenda agenda = new Agenda();
                 
         if(tipo == 0){
             
@@ -206,8 +208,8 @@ public class AgendaGUI<E> extends javax.swing.JFrame {
             contatosf.setContact(fone,email);
         
             Pessoa pessoaf = new Fisica(nome, contatosf, cpf, tipo);
-            contatosf.addContato(pessoaf);
-            contatosf.toString();
+            agenda.addContato(pessoaf);
+            agenda.toString();
         }
         else{
             
@@ -218,8 +220,8 @@ public class AgendaGUI<E> extends javax.swing.JFrame {
             contatosj.setContact(fone,email);
             
             Pessoa pessoaj = new Juridica(nome, contatosj, cnpj, tipo);
-            contatosj.addContato(pessoaj);
-            contatosj.toString();
+            agenda.addContato(pessoaj);
+            agenda.toString();
         }
             
     }//GEN-LAST:event_addContatoActionPerformed
@@ -253,6 +255,8 @@ public class AgendaGUI<E> extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         
+        Agenda agenda = new Agenda();
+
         int tipo = 0;
         String nome = "0";
         int fone = 0;
@@ -266,20 +270,20 @@ public class AgendaGUI<E> extends javax.swing.JFrame {
                 Contatos contatosf = new Contatos();
                 contatosf.setContact(fone,email);
                 Pessoa pessoaf = new Fisica(nome, contatosf, cpf, tipo);
-                contatosf.addContato(pessoaf);
-                contatosf.toString();
+                agenda.addContato(pessoaf);
+                agenda.toString();
                 break;
 
             case 1: 
                 Contatos contatosj = new Contatos();
                 contatosj.setContact(fone);
                 Pessoa pessoaj = new Juridica(nome, contatosj, cnpj, tipo);
-                contatosj.addContato(pessoaj);
-                contatosj.toString();
+                agenda.addContato(pessoaj);
+                agenda.toString();
                 break;
         }
         
-        
+        /*
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("GTK+".equals(info.getName())) {
@@ -295,6 +299,7 @@ public class AgendaGUI<E> extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> {
             new AgendaGUI().setVisible(true);
         });
+        */
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
