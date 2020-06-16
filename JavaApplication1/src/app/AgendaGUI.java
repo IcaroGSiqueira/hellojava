@@ -33,6 +33,8 @@ public class AgendaGUI extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Agenda");
@@ -54,6 +56,12 @@ public class AgendaGUI extends javax.swing.JFrame {
         emailForm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailFormActionPerformed(evt);
+            }
+        });
+
+        codeForm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                codeFormActionPerformed(evt);
             }
         });
 
@@ -99,6 +107,12 @@ public class AgendaGUI extends javax.swing.JFrame {
 
         jLabel4.setText("CPF/CNPJ");
 
+        jTextArea1.setEditable(false);
+        jTextArea1.setColumns(20);
+        jTextArea1.setLineWrap(true);
+        jTextArea1.setRows(5);
+        jScrollPane2.setViewportView(jTextArea1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -119,12 +133,15 @@ public class AgendaGUI extends javax.swing.JFrame {
                             .addComponent(foneForm)
                             .addComponent(codeForm, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(nomeForm))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(addContato, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(14, 14, 14)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tipoForm, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(rmvContato, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(addContato, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(rmvContato, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(tipoForm, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(10, 10, 10)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -133,25 +150,30 @@ public class AgendaGUI extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addComponent(tipoForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nomeForm, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(codeForm, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(foneForm, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nomeForm, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(codeForm, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(foneForm, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addGap(26, 26, 26))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(emailForm, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rmvContato)
                     .addComponent(addContato))
-                .addGap(26, 26, 26)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -159,17 +181,63 @@ public class AgendaGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addContatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addContatoActionPerformed
+        
         int tipo = this.tipoForm.getSelectedIndex();
-        String cpf = this.codeForm.getText();
-        String email = this.emailForm.getText();
-        String foneS = this.foneForm.getText();
-        int fone = Integer.parseInt(foneS);
-        String nome = this.nomeForm.getText();
-        Contatos contatosf = new Contatos();
-        contatosf.setContact(fone,email);
-        Pessoa pessoaf = new Fisica(nome, contatosf, cpf, tipo);
-        contatosf.addContato(pessoaf);
-        contatosf.toString();
+        
+        String email = null;
+        String foneS = null;
+        String nome = null;
+        
+        email = this.emailForm.getText();
+        foneS = this.foneForm.getText();
+        nome = this.nomeForm.getText();
+        
+        if(tipo == 0){
+            
+            String cpf = this.codeForm.getText();
+            Contatos contatosf = new Contatos();
+           
+            if ((foneS != null) && (email != null)){
+                int fone = Integer.parseInt(foneS);
+                contatosf.setContact(fone,email);
+            }
+            else if(email == null){
+                int fone = Integer.parseInt(foneS);
+                contatosf.setContact(fone);
+            }
+            else{
+                contatosf.setContact(email);
+            }
+        
+            Pessoa pessoaf = new Fisica(nome, contatosf, cpf, tipo);
+            contatosf.addContato(pessoaf);
+            contatosf.toString();
+        }
+        else{
+            
+            String cnpj = this.codeForm.getText();
+            Contatos contatosj = new Contatos();
+            
+            if ((foneS != null) && (email != null)){
+                int fone = Integer.parseInt(foneS);
+                contatosj.setContact(fone,email);
+                printf("oi");
+            }
+            else if(email == null){
+                int fone = Integer.parseInt(foneS);
+                contatosj.setContact(fone);
+                printf("foi");
+            }
+            else{
+                contatosj.setContact(email);
+                printf("moi");
+            }
+            
+            Pessoa pessoaj = new Juridica(nome, contatosj, cnpj, tipo);
+            contatosj.addContato(pessoaj);
+            contatosj.toString();
+        }
+            
     }//GEN-LAST:event_addContatoActionPerformed
 
     private void rmvContatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rmvContatoActionPerformed
@@ -192,6 +260,10 @@ public class AgendaGUI extends javax.swing.JFrame {
         
     }//GEN-LAST:event_tipoFormActionPerformed
 
+    private void codeFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codeFormActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_codeFormActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -206,7 +278,7 @@ public class AgendaGUI extends javax.swing.JFrame {
 
         switch(tipo){
 
-            case 1:
+            case 0:
                 Contatos contatosf = new Contatos();
                 contatosf.setContact(fone,email);
                 Pessoa pessoaf = new Fisica(nome, contatosf, cpf, tipo);
@@ -214,7 +286,7 @@ public class AgendaGUI extends javax.swing.JFrame {
                 contatosf.toString();
                 break;
 
-            case 2: 
+            case 1: 
                 Contatos contatosj = new Contatos();
                 contatosj.setContact(fone);
                 Pessoa pessoaj = new Juridica(nome, contatosj, cnpj, tipo);
@@ -223,11 +295,6 @@ public class AgendaGUI extends javax.swing.JFrame {
                 break;
         }
         
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("GTK+".equals(info.getName())) {
@@ -235,23 +302,13 @@ public class AgendaGUI extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AgendaGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AgendaGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AgendaGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(AgendaGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AgendaGUI().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new AgendaGUI().setVisible(true);
         });
     }
 
@@ -265,9 +322,15 @@ public class AgendaGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JList listContato;
     private javax.swing.JTextField nomeForm;
     private javax.swing.JButton rmvContato;
     private javax.swing.JComboBox tipoForm;
     // End of variables declaration//GEN-END:variables
+
+    private void printf(String oi) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
