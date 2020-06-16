@@ -1,7 +1,12 @@
 package app;
 import classes.*;
 
-public class AgendaGUI extends javax.swing.JFrame {
+public class AgendaGUI<E> extends javax.swing.JFrame {
+
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
     /**
      * Creates new form Agenda
@@ -20,14 +25,14 @@ public class AgendaGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        tipoForm = new javax.swing.JComboBox();
+        tipoForm = new javax.swing.JComboBox<E>();
         emailForm = new javax.swing.JTextField();
         codeForm = new javax.swing.JTextField();
         foneForm = new javax.swing.JTextField();
         nomeForm = new javax.swing.JTextField();
         addContato = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        listContato = new javax.swing.JList();
+        listContato = new javax.swing.JList<E>();
         rmvContato = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -46,25 +51,29 @@ public class AgendaGUI extends javax.swing.JFrame {
         setResizable(false);
 
         tipoForm.setMaximumRowCount(2);
-        tipoForm.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Física", "Jurídica" }));
+        tipoForm.setModel(new javax.swing.DefaultComboBoxModel<E>((E[]) new String[] { "Física", "Jurídica" }));
         tipoForm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tipoFormActionPerformed(evt);
             }
         });
 
+        emailForm.setText("");
         emailForm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailFormActionPerformed(evt);
             }
         });
 
+        codeForm.setText("");
         codeForm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 codeFormActionPerformed(evt);
             }
         });
 
+        foneForm.setText("");
+        foneForm.setToolTipText("");
         foneForm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 foneFormActionPerformed(evt);
@@ -72,6 +81,8 @@ public class AgendaGUI extends javax.swing.JFrame {
         });
 
         nomeForm.setBackground(new java.awt.Color(174, 178, 199));
+        nomeForm.setText("");
+        nomeForm.setToolTipText("");
         nomeForm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nomeFormActionPerformed(evt);
@@ -85,10 +96,16 @@ public class AgendaGUI extends javax.swing.JFrame {
             }
         });
 
-        listContato.setModel(new javax.swing.AbstractListModel() {
+        listContato.setModel(new javax.swing.AbstractListModel<E>() {
+            /**
+             *
+             */
+            private static final long serialVersionUID = 1L;
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
+            public E getElementAt(int i) {
+                return (E) strings[i];
+            }
         });
         jScrollPane1.setViewportView(listContato);
 
@@ -184,30 +201,19 @@ public class AgendaGUI extends javax.swing.JFrame {
         
         int tipo = this.tipoForm.getSelectedIndex();
         
-        String email = null;
-        String foneS = null;
-        String nome = null;
+        String email = this.emailForm.getText();
+        String foneS = this.foneForm.getText();
+        String nome = this.nomeForm.getText();
         
-        email = this.emailForm.getText();
-        foneS = this.foneForm.getText();
-        nome = this.nomeForm.getText();
-        
+        this.foneForm.setActionCommand(email);
+                
         if(tipo == 0){
             
             String cpf = this.codeForm.getText();
             Contatos contatosf = new Contatos();
-           
-            if ((foneS != null) && (email != null)){
-                int fone = Integer.parseInt(foneS);
-                contatosf.setContact(fone,email);
-            }
-            else if(email == null){
-                int fone = Integer.parseInt(foneS);
-                contatosf.setContact(fone);
-            }
-            else{
-                contatosf.setContact(email);
-            }
+
+            int fone = Integer.parseInt(foneS);
+            contatosf.setContact(fone,email);
         
             Pessoa pessoaf = new Fisica(nome, contatosf, cpf, tipo);
             contatosf.addContato(pessoaf);
@@ -218,20 +224,8 @@ public class AgendaGUI extends javax.swing.JFrame {
             String cnpj = this.codeForm.getText();
             Contatos contatosj = new Contatos();
             
-            if ((foneS != null) && (email != null)){
-                int fone = Integer.parseInt(foneS);
-                contatosj.setContact(fone,email);
-                printf("oi");
-            }
-            else if(email == null){
-                int fone = Integer.parseInt(foneS);
-                contatosj.setContact(fone);
-                printf("foi");
-            }
-            else{
-                contatosj.setContact(email);
-                printf("moi");
-            }
+            int fone = Integer.parseInt(foneS);
+            contatosj.setContact(fone,email);
             
             Pessoa pessoaj = new Juridica(nome, contatosj, cnpj, tipo);
             contatosj.addContato(pessoaj);
@@ -261,7 +255,7 @@ public class AgendaGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_tipoFormActionPerformed
 
     private void codeFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codeFormActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_codeFormActionPerformed
 
     /**
@@ -306,7 +300,7 @@ public class AgendaGUI extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(AgendaGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
-        /* Create and display the form */
+        // Create and display the form
         java.awt.EventQueue.invokeLater(() -> {
             new AgendaGUI().setVisible(true);
         });
@@ -324,10 +318,10 @@ public class AgendaGUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JList listContato;
+    private javax.swing.JList<E> listContato;
     private javax.swing.JTextField nomeForm;
     private javax.swing.JButton rmvContato;
-    private javax.swing.JComboBox tipoForm;
+    private javax.swing.JComboBox<E> tipoForm;
     // End of variables declaration//GEN-END:variables
 
     private void printf(String oi) {
